@@ -1,5 +1,6 @@
 package de.schauderhaft.datajpa1659;
 
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,12 +24,10 @@ class Datajpa1659ApplicationTests {
 
 		tx.executeWithoutResult((ts) -> {
 
-			B b = new B();
-			b.setId(createId(42));
+			B b = new B(createRandomId());
 			bRepo.save(b);
 
-			A a = new A();
-			a.setId(createId(23));
+			A a = new A(createRandomId());
 			a.setB(b);
 			aRepo.save(a);
 		});
@@ -53,10 +52,8 @@ class Datajpa1659ApplicationTests {
 
 	}
 
-	private EntityId createId(int id) {
-		EntityId aId = new EntityId();
-		aId.setId(id);
-		return aId;
+	private EntityId createRandomId() {
+		return new EntityId(UUID.randomUUID().toString());
 	}
 
 }

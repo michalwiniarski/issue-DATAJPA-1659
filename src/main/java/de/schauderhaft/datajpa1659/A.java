@@ -27,6 +27,13 @@ public class A extends Base {
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
 	private B b;
 
+	A() {
+	}
+
+	public A(EntityId id) {
+		super(id);
+	}
+
 	public B getB() {
 		return b;
 	}

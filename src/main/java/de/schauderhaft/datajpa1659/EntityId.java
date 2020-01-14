@@ -23,14 +23,17 @@ import java.io.Serializable;
  */
 @Embeddable
 public class EntityId implements Serializable {
-	int id;
+	String id;
 
-	public int getId() {
-		return id;
+	private EntityId() {
 	}
 
-	public void setId(int id) {
+	public EntityId(String id) {
 		this.id = id;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 }

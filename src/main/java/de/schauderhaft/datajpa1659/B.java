@@ -22,4 +22,12 @@ import javax.persistence.Entity;
  */
 @Entity
 public class B extends Base {
+
+  B() {
+
+  }
+
+  public B(EntityId id) {
+    super(id);
+  }
 }

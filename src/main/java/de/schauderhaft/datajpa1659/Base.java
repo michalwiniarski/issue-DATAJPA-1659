@@ -32,19 +32,11 @@ public class Base {
 	@Version
 	private Timestamp timestamp;
 
-	public EntityId getId() {
-		return id;
+	protected Base() {
+
 	}
 
-	public void setId(EntityId id) {
+	public Base(EntityId id) {
 		this.id = id;
-	}
-
-	public Timestamp getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(Timestamp timestamp) {
-		this.timestamp = timestamp;
 	}
 }
